@@ -2,8 +2,10 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>کتابخانه گورانی</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروشگاه گورانی | موجودی</title>
   <style>
+    /* فونت سفارشی */
     @font-face {
       font-family: 'Doran';
       src: url('fonts/Doran.woff2') format('woff2'),
@@ -12,54 +14,125 @@
       font-weight: normal;
       font-style: normal;
     }
+
+    :root {
+      --bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --text: #333333;
+      --accent: #0095f6; /* رنگ اینستاگرام */
+      --radius: 12px;
+      --shadow: 0 2px 8px rgba(0, 0, 0, .05);
+      --transition: 0.2s ease-in-out;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
     body {
-      margin: 2rem;
+      margin: 0;
+      padding-bottom: 5.5rem; /* فضایی برای دکمه خرید ثابت */
       font-family: 'Doran', sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
     }
-    .main-title {
-      font-size: 4rem;
+
+    header {
+      background: var(--card-bg);
+      padding: 1rem;
       text-align: center;
-      margin-bottom: 0.5rem;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    .subtitle {
-      font-size: 2rem;
-      text-align: right;
-      margin-bottom: 2rem;
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
     }
+
+    main {
+      padding: 1rem;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin: 1rem 0 0.75rem;
+    }
+
     .item {
-      margin-bottom: 1.5rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition);
     }
+    .item:active { transform: scale(0.98); }
+
     .item-title {
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 1.2rem;
+      font-weight: 600;
     }
     .item-text {
-      font-size: 1.25rem;
-      display: block;
+      font-size: 1rem;
       margin-top: 0.25rem;
+    }
+
+    /* باکس ثابت خرید */
+    .buy-box {
+      position: fixed;
+      inset-inline-start: 0;
+      inset-inline-end: 0;
+      bottom: 0;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.95rem 1.25rem;
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 500;
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+      box-shadow: 0 -2px 8px rgba(0,0,0,.15);
+    }
+    .buy-box a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <h1 class="main-title">کتابخانه گورانی</h1>
-  <h2 class="subtitle">لیست موجودی</h2>
+  <header>
+    <h1>فروشگاه گورانی</h1>
+  </header>
 
-  <div class="item">
-    <div class="item-title">بتهوون</div>
-    <div class="item-text">سمفونی شماره ۵</div>
-  </div>
+  <main>
+    <h2>موجودی محصولات</h2>
 
-  <div class="item">
-    <div class="item-title">برامس</div>
-    <div class="item-text">سمفونی شماره ۴</div>
-  </div>
+    <div class="item">
+      <div class="item-title">بتهوون</div>
+      <div class="item-text">سمفونی شماره‌۵</div>
+    </div>
 
-  <div class="item">
-    <div class="item-title">دورژاک</div>
-    <div class="item-text">سمفونی شماره ۹</div>
+    <div class="item">
+      <div class="item-title">برامس</div>
+      <div class="item-text">سمفونی شماره‌۴</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">دورژاک</div>
+      <div class="item-text">سمفونی شماره‌۹</div>
+    </div>
+    <!-- برای افزودن آیتم جدید همین ساختار را کپی کنید -->
+  </main>
+
+  <div class="buy-box">
+    <a href="https://ig.me/m/gowranee" target="_blank" rel="noopener">
+      برای خرید اینجا بزن ↗️
+    </a>
   </div>
 </body>
 </html>
