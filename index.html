@@ -69,8 +69,8 @@
         --coming-bg: #ffffff;
         --coming-text: #000000;
 
-        /* رنگ خطوط پس‌زمینه */
-        --bg-line: rgba(0, 0, 0, 0.04);
+        /* رنگ خطوط محدود پس‌زمینه */
+        --bg-line: rgba(0, 0, 0, 0.05);
       }
 
       /* ------------------ ریست و بیس ------------------ */
@@ -83,16 +83,27 @@
       }
 
       body {
+        position: relative;
         font-family: "DoranRegular", sans-serif;
         direction: rtl;
-        /* گرادیان + خطوط مورب متقاطع */
-        background:
-          repeating-linear-gradient(45deg, var(--bg-line) 0px, var(--bg-line) 1px, transparent 1px, transparent 28px),
-          repeating-linear-gradient(-45deg, var(--bg-line) 0px, var(--bg-line) 1px, transparent 1px, transparent 28px),
-          linear-gradient(180deg, var(--grad-start) 0%, var(--grad-end) 100%);
+        background: linear-gradient(180deg, var(--grad-start) 0%, var(--grad-end) 100%);
         color: #333;
         line-height: 1.6;
         padding-bottom: 5.5rem; /* فضا برای دکمه خرید */
+      }
+
+      /* تنها چند خط نازک متقاطع */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(25deg, transparent calc(50% - 0.5px), var(--bg-line) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+          linear-gradient(-35deg, transparent calc(50% - 0.5px), var(--bg-line) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+          linear-gradient(60deg, transparent calc(50% - 0.5px), var(--bg-line) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px));
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        z-index: -1;
       }
 
       /* ------------------ هدر ------------------ */
@@ -193,7 +204,7 @@
   <body>
     <!-- هدر -->
     <header>
-      <h1>فروشگاه گورانی</h1>
+      <h1>کتابخانه گورانی</h1>
     </header>
 
     <!-- محتوای اصلی -->
