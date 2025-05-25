@@ -13,10 +13,9 @@
       gtag("config", "G-3NPTW52LL3");
     </script>
 
-    <title>فروشگاه گورانی</title>
+    <title>گورانی</title>
 
     <style>
-      /* ------------------ فونت‌ها ------------------ */
       @font-face {
         font-family: "DoranExtraBold";
         src: url("fonts/Doran-ExtraBold.woff2") format("woff2"),
@@ -39,41 +38,25 @@
         font-style: normal;
       }
 
-      /* ------------------ متغیرهای ریشه ------------------ */
       :root {
-        /* گرادیان پس‌زمینه صفحه */
         --grad-start: #ffffff;
         --grad-end: #f5f5f5;
-
-        /* هدر */
         --header-bg: #282826;
         --header-text: #ffffff;
-
-        /* دکمه خرید */
         --accent: #2a3e4c;
-
-        /* اشکال بصری */
         --radius: 12px;
         --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         --tr: 0.2s ease-in-out;
-
-        /* آیتم‌های موجود */
         --item1-bg: #fffdea;
         --item1-text: #4e1f00;
         --item2-bg: #f3f3f2;
         --item2-text: #333446;
         --item3-bg: #f6f5e5;
         --item3-text: #183b4e;
-
-        /* آیتم‌های به‌زودی */
         --coming-bg: #ffffff;
-        --coming-text: #000000;
-
-        /* رنگ خطوط محدود پس‌زمینه */
+        --coming-text: #757575;
         --bg-line: rgba(0, 0, 0, 0.05);
       }
-
-      /* ------------------ ریست و بیس ------------------ */
       *,
       *::before,
       *::after {
@@ -89,10 +72,8 @@
         background: linear-gradient(180deg, var(--grad-start) 0%, var(--grad-end) 100%);
         color: #333;
         line-height: 1.6;
-        padding-bottom: 5.5rem; /* فضا برای دکمه خرید */
+        padding-bottom: 5.5rem; 
       }
-
-      /* تنها چند خط نازک متقاطع */
       body::before {
         content: "";
         position: fixed;
@@ -115,7 +96,6 @@
         z-index: -1;
       }
 
-      /* ------------------ هدر ------------------ */
       header {
         background: var(--header-bg);
         text-align: center;
@@ -132,7 +112,6 @@
         color: var(--header-text);
       }
 
-      /* ------------------ بخش اصلی ------------------ */
       main {
         padding: 1rem;
         max-width: 720px;
@@ -149,7 +128,6 @@
         margin-bottom: 0.75rem;
       }
 
-      /* ------------------ کارت‌های آیتم ------------------ */
       .item {
         border-radius: var(--radius);
         padding: 1rem;
@@ -171,24 +149,21 @@
         font-size: 0.95rem;
       }
 
-      /* رنگ‌بندی آیتم‌های موجود */
       .item-1 { background: var(--item1-bg); color: var(--item1-text); }
       .item-2 { background: var(--item2-bg); color: var(--item2-text); }
       .item-3 { background: var(--item3-bg); color: var(--item3-text); }
 
-      /* رنگ‌بندی آیتم‌های به‌زودی + بلر ملایم */
      .coming {
         background: var(--coming-bg);
         color: var(--coming-text);
-        border: 1px solid #ddd;
+        border: 0px solid #ddd;
 
         padding: 0.75rem;
-        opacity: 0.8;
-        filter: blur(0.8px) grayscale(50%);
+        opacity: 0.7;
+        filter: blur(1px) grayscale(50%);
         font-size: 0.9em;
       }
 
-      /* ------------------ دکمه خرید ------------------ */
       .buy-box {
         position: fixed;
         left: 0;
@@ -214,55 +189,51 @@
   </head>
 
   <body>
-    <!-- هدر -->
     <header>
       <h1>کتابخانه گورانی</h1>
     </header>
 
-    <!-- محتوای اصلی -->
     <main>
-      <!-- موجود -->
       <section>
         <h2>پارتیتورهای موجود</h2>
 
         <div class="item item-1">
           <div class="item-title">بتهوون</div>
-          <div class="item-text">سمفونی شماره‌۵</div>
+          <div class="item-text">سمفونی شماره‌ ۵</div>
         </div>
 
         <div class="item item-2">
           <div class="item-title">برامس</div>
-          <div class="item-text">سمفونی شماره‌۴</div>
+          <div class="item-text">سمفونی شماره‌ ۴</div>
         </div>
 
         <div class="item item-3">
           <div class="item-title">دورژاک</div>
-          <div class="item-text">سمفونی شماره‌۹</div>
+          <div class="item-text">سمفونی شماره‌ ۹</div>
         </div>
       </section>
 
-      <!-- به زودی -->
       <section>
         <h2>به‌زودی</h2>
 
         <div class="item coming">
           <div class="item-title">بتهوون</div>
-          <div class="item-text">سمفونی شماره‌۳</div>
+          <div class="item-text">سمفونی شماره‌ ۳</div>
         </div>
 
         <div class="item coming">
           <div class="item-title">بتهوون</div>
-          <div class="item-text">سمفونی شماره‌۹</div>
+          <div class="item-text">سمفونی شماره‌ ۹</div>
         </div>
 
         <div class="item coming">
           <div class="item-title">برامس</div>
-          <div class="item-text">سمفونی شماره‌۱</div>
+          <div class="item-text">سمفونی شماره‌ ۱</div>
         </div>
 
         <div class="item coming">
           <div class="item-title">برامس</div>
-          <div class="item-text">سمفونی شماره‌۳</div>
+          <div class="item-text">سمفونی شماره‌ ۳</div>
         </div>
         
         <div class="item coming">
@@ -277,17 +248,17 @@
 
         <div class="item coming">
           <div class="item-title">چایکفسکی</div>
-          <div class="item-text">سمفونی شماره‌۶</div>
+          <div class="item-text">سمفونی شماره‌ ۶</div>
         </div>
 
         <div class="item coming">
           <div class="item-title">شوبرت</div>
-          <div class="item-text">سمفونی شماره‌۸</div>
+          <div class="item-text">سمفونی شماره‌ ۸</div>
         </div>
         
         <div class="item coming">
           <div class="item-title">سیبلیوس</div>
-          <div class="item-text">سمفونی شماره‌۲</div>
+          <div class="item-text">سمفونی شماره‌ ۲</div>
         </div>
 
         <div class="item coming">
@@ -298,7 +269,6 @@
       </section>
     </main>
 
-    <!-- دکمه خرید -->
     <div class="buy-box">
       <a href="https://ig.me/m/gowranee" target="_blank" rel="noopener">
         سفارش از طریق اینستاگرام ↗️
