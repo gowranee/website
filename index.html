@@ -8,9 +8,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3NPTW52LL3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag() { dataLayer.push(arguments); }
       gtag("js", new Date());
       gtag("config", "G-3NPTW52LL3");
     </script>
@@ -45,7 +43,7 @@
       :root {
         /* گرادیان پس‌زمینه صفحه */
         --grad-start: #ffffff;
-        --grad-end: #f0f0f0;
+        --grad-end: #f5f5f5;
 
         /* هدر */
         --header-bg: #282826;
@@ -70,6 +68,9 @@
         /* آیتم‌های به‌زودی */
         --coming-bg: #ffffff;
         --coming-text: #000000;
+
+        /* رنگ خطوط پس‌زمینه */
+        --bg-line: rgba(0, 0, 0, 0.04);
       }
 
       /* ------------------ ریست و بیس ------------------ */
@@ -84,7 +85,11 @@
       body {
         font-family: "DoranRegular", sans-serif;
         direction: rtl;
-        background: linear-gradient(180deg, var(--grad-start) 0%, var(--grad-end) 100%);
+        /* گرادیان + خطوط مورب متقاطع */
+        background:
+          repeating-linear-gradient(45deg, var(--bg-line) 0px, var(--bg-line) 1px, transparent 1px, transparent 28px),
+          repeating-linear-gradient(-45deg, var(--bg-line) 0px, var(--bg-line) 1px, transparent 1px, transparent 28px),
+          linear-gradient(180deg, var(--grad-start) 0%, var(--grad-end) 100%);
         color: #333;
         line-height: 1.6;
         padding-bottom: 5.5rem; /* فضا برای دکمه خرید */
@@ -133,9 +138,7 @@
         transition: transform var(--tr);
       }
 
-      .item:active {
-        transform: scale(0.97);
-      }
+      .item:active { transform: scale(0.97); }
 
       .item-title {
         font-family: "DoranMedium", sans-serif;
@@ -149,20 +152,11 @@
       }
 
       /* رنگ‌بندی آیتم‌های موجود */
-      .item-1 {
-        background: var(--item1-bg);
-        color: var(--item1-text);
-      }
-      .item-2 {
-        background: var(--item2-bg);
-        color: var(--item2-text);
-      }
-      .item-3 {
-        background: var(--item3-bg);
-        color: var(--item3-text);
-      }
+      .item-1 { background: var(--item1-bg); color: var(--item1-text); }
+      .item-2 { background: var(--item2-bg); color: var(--item2-text); }
+      .item-3 { background: var(--item3-bg); color: var(--item3-text); }
 
-      /* رنگ‌بندی آیتم‌های به‌زودی */
+      /* رنگ‌بندی آیتم‌های به‌زودی + بلر ملایم */
       .coming {
         background: var(--coming-bg);
         color: var(--coming-text);
