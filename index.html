@@ -5,83 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>فروشگاه گورانی | موجودی</title>
   <style>
-    /* فونت سفارشی */
     @font-face {
-      font-family: 'Doran';
+      font-family: 'DoranExtraBold';
+      src: url('fonts/Doran-ExtraBold.woff2') format('woff2'),
+           url('fonts/Doran-ExtraBold.woff') format('woff');
+      font-weight: 800;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'DoranMedium';
+      src: url('fonts/Doran-Medium.woff2') format('woff2'),
+           url('fonts/Doran-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'DoranRegular';
       src: url('fonts/Doran.woff2') format('woff2'),
-           url('fonts/Doran.woff') format('woff'),
-           url('fonts/Doran.ttf') format('truetype');
-      font-weight: normal;
+           url('fonts/Doran.woff') format('woff');
+      font-weight: 400;
       font-style: normal;
     }
 
     :root {
-      --bg: #f9f9f9;
-      --card-bg: #ffffff;
-      --text: #333333;
-      --accent: #0095f6; /* رنگ اینستاگرام */
+      --bg-page: #F0ECDB;  /* پس‌زمینهٔ کل صفحه */
+      --bg-header: #FFFDEA; /* پس‌زمینهٔ هدر */
+      --text-header: #4E1F00; /* متن هدر */
+      --accent: #0095f6; /* رنگ دکمه خرید */
       --radius: 12px;
       --shadow: 0 2px 8px rgba(0, 0, 0, .05);
-      --transition: 0.2s ease-in-out;
+      --transition: .2s ease-in-out;
+
+      /* آیتم اول */
+      --item1-bg: #FFFDEA;
+      --item1-text: #4E1F00;
+      /* آیتم دوم */
+      --item2-bg: #F3F3F2;
+      --item2-text: #333446;
+      /* آیتم سوم */
+      --item3-bg: #F6F5E5;
+      --item3-text: #183B4E;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
 
     body {
       margin: 0;
-      padding-bottom: 5.5rem; /* فضایی برای دکمه خرید ثابت */
-      font-family: 'Doran', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'DoranRegular', sans-serif;
+      background: var(--bg-page);
+      color: #333;
       line-height: 1.6;
+      padding-bottom: 5.5rem; /* فضا برای دکمه خرید ثابت */
     }
 
+    /* هدر */
     header {
-      background: var(--card-bg);
-      padding: 1rem;
+      background: var(--bg-header);
       text-align: center;
+      padding: 1rem;
       box-shadow: var(--shadow);
       position: sticky;
       top: 0;
       z-index: 10;
     }
-
     header h1 {
       margin: 0;
-      font-size: 1.8rem;
+      font-family: 'DoranExtraBold', sans-serif;
+      font-size: 2rem;
+      color: var(--text-header);
     }
 
+    /* محتوا */
     main {
       padding: 1rem;
       max-width: 720px;
       margin: auto;
     }
-
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin: 1rem 0 0.75rem;
+      font-family: 'DoranMedium', sans-serif;
     }
 
+    /* کارت آیتم‌ها */
     .item {
-      background: var(--card-bg);
       border-radius: var(--radius);
       padding: 1rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: .75rem;
       box-shadow: var(--shadow);
       transition: transform var(--transition);
     }
-    .item:active { transform: scale(0.98); }
+    .item:active { transform: scale(.98); }
 
     .item-title {
-      font-size: 1.2rem;
-      font-weight: 600;
+      font-family: 'DoranMedium', sans-serif;
+      font-size: 1.1rem;
+      margin: 0 0 .25rem;
     }
     .item-text {
-      font-size: 1rem;
-      margin-top: 0.25rem;
+      font-family: 'DoranRegular', sans-serif;
+      font-size: .95rem;
+      margin: 0;
     }
 
-    /* باکس ثابت خرید */
+    /* رنگ‌بندی اختصاصی هر آیتم */
+    .item-1 { background: var(--item1-bg); color: var(--item1-text); }
+    .item-2 { background: var(--item2-bg); color: var(--item2-text); }
+    .item-3 { background: var(--item3-bg); color: var(--item3-text); }
+
+    /* دکمه خرید */
     .buy-box {
       position: fixed;
       inset-inline-start: 0;
@@ -89,10 +121,10 @@
       bottom: 0;
       background: var(--accent);
       color: #fff;
-      padding: 0.95rem 1.25rem;
+      padding: 1rem 1.25rem;
       text-align: center;
+      font-family: 'DoranMedium', sans-serif;
       font-size: 1.15rem;
-      font-weight: 500;
       border-top-left-radius: var(--radius);
       border-top-right-radius: var(--radius);
       box-shadow: 0 -2px 8px rgba(0,0,0,.15);
@@ -112,27 +144,24 @@
   <main>
     <h2>موجودی محصولات</h2>
 
-    <div class="item">
+    <div class="item item-1">
       <div class="item-title">بتهوون</div>
       <div class="item-text">سمفونی شماره‌۵</div>
     </div>
 
-    <div class="item">
+    <div class="item item-2">
       <div class="item-title">برامس</div>
       <div class="item-text">سمفونی شماره‌۴</div>
     </div>
 
-    <div class="item">
+    <div class="item item-3">
       <div class="item-title">دورژاک</div>
       <div class="item-text">سمفونی شماره‌۹</div>
     </div>
-    <!-- برای افزودن آیتم جدید همین ساختار را کپی کنید -->
   </main>
 
   <div class="buy-box">
-    <a href="https://ig.me/m/gowranee" target="_blank" rel="noopener">
-      برای خرید اینجا بزن ↗️
-    </a>
+    <a href="https://ig.me/m/gowranee" target="_blank" rel="noopener">برای خرید اینجا بزن ↗️</a>
   </div>
 </body>
 </html>
