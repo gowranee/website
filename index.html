@@ -274,25 +274,43 @@
       سفارش از طریق اینستاگرام ↗️
       </a>
     </div>
-    <script>
-      const ua   = navigator.userAgent || "";
-      const btn  = document.getElementById("orderBtn");
-      const igWV = ua.includes("Instagram") || ua.includes("InstagramWebView");
-
-      if (igWV) {
-        btn.href = "instagram://direct-inbox";
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          location.href = "instagram://direct-inbox";
-          setTimeout(() => {
-            location.href = "https://instagram.com/_u/gowranee";
-          }, 1500);
-        });
-      } else if (ua.includes("Android")) {
-        btn.href =
-          "intent://instagram.com/_u/gowranee/#Intent;package=com.instagram.android;scheme=https;end";
-      }
-    </script>
+    
+      <script>
+          const ua = navigator.userAgent || "";
+          const btn = document.getElementById("orderBtn");
+          const username = "gowranee";
+          
+          const isInstagramWebView = ua.includes("Instagram") || ua.includes("InstagramWebView");
+          
+          if (isInstagramWebView) {
+              btn.href = `instagram://user?username=${username}`;
+              btn.addEventListener("click", (e) => {
+                  e.preventDefault();
+                  location.href = `instagram://direct-thread/user/${username}`;
+              });
+          } else {
+              if (/Android|iPhone|iPad|iPod/i.test(ua)) {
+                  const intentUrl = `intent://instagram.com/_u/${username}#Intent;package=com.instagram.android;scheme=https;end`;
+                  const universalLink = `instagram://user?username=${username}`;
+                  
+                  btn.addEventListener("click", (e) => {
+                      e.preventDefault();
+                      location.href = universalLink;
+                      
+                      setTimeout(() => {
+                          if (document.hidden) return;
+                          if (/Android/i.test(ua)) {
+                              location.href = intentUrl;
+                          } else {
+                              location.href = `https://ig.me/m/${username}`;
+                          }
+                      }, 1500);
+                  });
+              } else {
+                  btn.href = `https://ig.me/m/${username}`;
+              }
+          }
+      </script>
   </body>
 </html>
 
