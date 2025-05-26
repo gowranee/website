@@ -273,22 +273,26 @@
       <a  id="orderBtn" href="https://ig.me/m/gowranee" class="btn-order" rel="noopener">
       سفارش از طریق اینستاگرام ↗️
       </a>
-      
     </div>
+    <script>
+      const ua   = navigator.userAgent || "";
+      const btn  = document.getElementById("orderBtn");
+      const igWV = ua.includes("Instagram") || ua.includes("InstagramWebView");
+
+      if (igWV) {
+        btn.href = "instagram://direct-inbox";
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          location.href = "instagram://direct-inbox";
+          setTimeout(() => {
+            location.href = "https://instagram.com/_u/gowranee";
+          }, 1500);
+        });
+      } else if (ua.includes("Android")) {
+        btn.href =
+          "intent://instagram.com/_u/gowranee/#Intent;package=com.instagram.android;scheme=https;end";
+      }
+    </script>
   </body>
 </html>
 
-<script>
-const ua = navigator.userAgent || "";
-const btn = document.getElementById("orderBtn");
-if (ua.includes("Instagram")) {
-  btn.href = "instagram://direct-inbox";      // iOS & Android schema
-  btn.onclick = () => {
-     setTimeout(()=>location.href="https://instagram.com/_u/gowranee",1500);
-  };
-}
-else if (ua.includes("Android")) {
-  btn.href =
-   "intent://instagram.com/_u/gowranee#Intent;package=com.instagram.android;scheme=https;end";
-}
-</script>
